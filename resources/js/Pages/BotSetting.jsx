@@ -28,10 +28,9 @@ function BotSetting(props) {
     if (e.messages.type === "Qr") {
       QRCode.toDataURL(e.messages.qr).then((url) => setQr(url));
     }
+console.log(e);
     setLog([...logs, e.messages.msg]);
   });
-
-  console.log(props.status.value);
 
   return (
     <DashboardLayout
