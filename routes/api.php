@@ -8,6 +8,7 @@ use App\Http\Controllers\PhotoController;
 use App\Models\BotSetting;
 use App\Models\Kecamatan;
 use App\Models\Kelurahan;
+use App\Models\DataAcara;
 use App\Models\MasterTimPemenangan;
 use App\Models\Notification;
 use GuzzleHttp\Client;
@@ -66,11 +67,16 @@ Route::post('/wapi', function (Request $request) {
         BotSetting::updateOrCreate(['setting_type' => 'wa-bot', 'input_type' => 'text'], ['setting_type' => 'wa-bot', 'input_type' => 'text','value'=>false]);
     }
     WaApi::dispatch($msg);
+
 });
 
 Route::POST('/uploadfromtelegram', [PhotoController::class, 'uploadFromUrl']);
 
 Route::POST('/absen', [AbsenController::class, 'index']);
+
+Route::get('/cekaja', function(){
+    return 'hello';
+});
 
 Route::get('/getkecamatan', function (Request $request) {
 
@@ -90,7 +96,7 @@ Route::get('/getkelurahan/{slug}', function ($slug) {
     }
 });
 
-Route::post('/uploadbase64', [PhotoController::class, 'uploadBase64']);
+Route::post('/upload64', [PhotoController::class, 'uploadBase64']);
 
 Route::post('/savefromwa', function (Request $request) {
 
@@ -131,3 +137,14 @@ Route::post('/savefromwa', function (Request $request) {
         return response()->json('error', 500);
     }
 });
+
+Route::get('/list-acara', function(){
+    
+    try {
+       $acara = DataAcara::all();
+       return response()->json($acara, 200);
+    } catch (Exception $th) {
+        return response()->json($th->getMessage, 401);
+    }
+});
+
