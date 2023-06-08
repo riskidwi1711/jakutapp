@@ -125,7 +125,7 @@ export default function Login({ status, canResetPassword }) {
                                                 htmlFor="username"
                                                 className="form-label"
                                             >
-                                                Email
+                                                Alamat Email
                                             </label>
                                             <input
                                                 type="text"
@@ -145,7 +145,7 @@ export default function Login({ status, canResetPassword }) {
 
                                         <div className="mb-4">
                                             <label className="form-label">
-                                                Password
+                                                Kata Sandi
                                             </label>
                                             <div className="input-group auth-pass-inputgroup">
                                                 <input
@@ -196,7 +196,7 @@ export default function Login({ status, canResetPassword }) {
                                                 className="btn btn-primary waves-effect waves-light"
                                                 processing={processing}
                                             >
-                                                Log in
+                                                Masuk
                                             </PrimaryButton>
                                         </div>
                                     </form>

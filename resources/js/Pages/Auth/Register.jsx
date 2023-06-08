@@ -105,7 +105,7 @@ export default function Register() {
                   <div className="p-2">
                     <form onSubmit={submit}>
                       <div>
-                        <InputLabel forInput="name" value="Name" />
+                        <InputLabel forInput="name" value="Nama" />
 
                         <TextInput
                           type="text"
@@ -122,7 +122,7 @@ export default function Register() {
                       </div>
 
                       <div className="mt-4">
-                        <InputLabel forInput="email" value="Email" />
+                        <InputLabel forInput="email" value="Alamat Email" />
 
                         <TextInput
                           type="email"
@@ -140,7 +140,7 @@ export default function Register() {
                       <div className="mt-4">
                         <InputLabel
                           forInput="no_handphone"
-                          value="No Handphone"
+                          value="No Telepon"
                         />
 
                         <TextInput
@@ -205,7 +205,7 @@ export default function Register() {
                           className="btn btn-primary waves-effect waves-ligt w-full"
                           processing={processing}
                         >
-                          Register
+                          Daftar Akses
                         </PrimaryButton>
                       </div>
                     </form>
