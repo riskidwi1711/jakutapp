@@ -40,7 +40,7 @@ console.log(qr);
     >
       <div className="main-content">
         <div className="page-content row">
-          <div className="container-fluid col-6 justify-content-center align-items-center">
+          <div className="container-fluid col-sm-12 col-lg-6 justify-content-center align-items-center">
             <PageTitle crumbs="Home/Bot Setting" title="WhatsApp Bot" />
             <Card title={"Koneksi ke WhatsApp bot"} >
               {props.status.value == 0 ? (
